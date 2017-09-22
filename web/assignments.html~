@@ -16,7 +16,7 @@ https://still-inlet-46901.herokuapp.com/homepage.css
 <center>
 	<div>
 	<p onclick="showlist()">Yea, so, the semester just started, and I don't have many things to put here, 
-	but click here for a drop-down menu of all my assignments that I will be doing.</p>
+	but click here for a menu of all my assignments that I will be doing.</p>
 	
 	<ul id="list">
 		<li>Week 03</li>
