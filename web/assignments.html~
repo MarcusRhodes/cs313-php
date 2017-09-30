@@ -13,7 +13,7 @@
 	but click here for a menu of all my assignments that I will be doing.</p>
 	
 	<ul id="list">
-		<li>Week 03</li>
+		<li><a>Week 03</a></li>
 		<li>Week 04</li>
 		<li>Week 05</li>
 		<li>Week 06</li>
@@ -22,7 +22,7 @@
 		<li>Week 09</li>
 		<li>Week 10</li>
 		<li>Week 11</li>
-		<li>Week 13</li>
+		<li>Week 12</li>
 	</ul>
 	
 	</div>
