@@ -16,13 +16,13 @@
       <br>
       Comment: <textarea name="comment" rows="5" cols="20">
       </textarea><br>
-		<input type="checkbox" value="North America" name="location">North America
-		<input type="checkbox" value="South America" name="location">South America
-		<input type="checkbox" value="Europe" name="location">Europe
-		<input type="checkbox" value="Asia" name="location">Asia
-		<input type="checkbox" value="Australia" name="location">Australia
-		<input type="checkbox" value="Africa" name="location">Africa
-		<input type="checkbox" value="Antarctica" name="location">Antarctica<br/>      
+		<input type="checkbox" value="North America" name="location1">North America
+		<input type="checkbox" value="South America" name="location2">South America
+		<input type="checkbox" value="Europe" name="location3">Europe
+		<input type="checkbox" value="Asia" name="location4">Asia
+		<input type="checkbox" value="Australia" name="location5">Australia
+		<input type="checkbox" value="Africa" name="location6">Africa
+		<input type="checkbox" value="Antarctica" name="location7">Antarctica<br/>      
 		<input type="submit">
 </form>
 
