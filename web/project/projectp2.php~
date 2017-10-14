@@ -6,8 +6,20 @@ session_start();
 <body> 
 <center>
 <?php
-	require "dbConnect.php";
-	$db = get_db();
+	if (empty($dbUrl)) {
+		$dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
+	}
+	try
+	{
+		$user = 'postgres';
+		$password = 'aurelius6908';
+		$db = new PDO('pgsql:host=127.0.0.1;dbname=projectDB', $user, $password);
+	}
+	catch (PDOException $ex)
+	{
+		echo 'Error!: ' . $ex->getMessage();
+		die();
+	}
 	$ID = $_POST['imageid'];
 	foreach ($db->query("SELECT * FROM image WHERE imageid = '$ID'") as $row)
 	{
