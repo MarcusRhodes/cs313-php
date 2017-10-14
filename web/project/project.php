@@ -7,27 +7,28 @@ session_start();
 <center>
 <h1>Image Gallery</h1>
 <?php
-	$dbUrl = getenv('postgres://postgres:password@localhost:5432/projectDB');
-	$dbopts = parse_url($dbUrl);
-	$dbHost = $dbopts["host"];
-	$dbPort = $dbopts["port"];
-	$dbUser = $dbopts["user"];
-	$dbPassword = $dbopts["pass"];
-	$dbName = ltrim($dbopts["path"],'/');
-	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-//This is the same thing, but for Heroku
-//$dbUrl = getenv('DATABASE_URL');
-
-//$dbopts = parse_url($dbUrl);
-
-//$dbHost = $dbopts["host"];
-//$dbPort = $dbopts["port"];
-//$dbUser = $dbopts["user"];
-//$dbPassword = $dbopts["pass"];
-//$dbName = ltrim($dbopts["path"],'/');
-
-//$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+	$db = NULL;
+	try {
+		$dbUrl = getenv('DATABASE_URL');
+		if (!isset($dbUrl) || empty($dbUrl)) {
+			$dbUrl = "postgres://postgres:aurelius6908@localhost:5432/projectDB";
+		}
+		
+		$dbopts = parse_url($dbUrl);
+		$dbHost = $dbopts["host"];
+		$dbPort = $dbopts["port"];
+		$dbUser = $dbopts["user"];
+		$dbPassword = $dbopts["pass"];
+		$dbName = ltrim($dbopts["path"],'/');
+		
+		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	}
+	catch (PDOException $ex) {
+		echo "Error connecting to DB. Details: $ex";
+		die();
+	}
+	
 ?>
 <?php
 echo '<form action="projectp2.php" method="post">';
