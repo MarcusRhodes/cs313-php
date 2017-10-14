@@ -9,8 +9,6 @@ session_start();
 <?php
 require "dbConnect.php";
 $db = get_db();
-?>
-<?php
 echo '<form action="projectp2.php" method="post">';
 foreach ($db->query('SELECT * FROM image') as $row)
 {
