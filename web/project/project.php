@@ -7,7 +7,7 @@ session_start();
 <center>
 <h1>Image Gallery</h1>
 <?php
-	$dbUrl = getenv('DATABASE_URL');
+	$dbUrl = getenv('postgres://postgres:aurelius6908@localhost:5432/cs313db');
 	$dbopts = parse_url($dbUrl);
 	$dbHost = $dbopts["host"];
 	$dbPort = $dbopts["port"];
