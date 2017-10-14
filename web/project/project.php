@@ -11,20 +11,12 @@ session_start();
 	if (empty($dbUrl)) {
 		$dbUrl = "postgres://postgres:password@localhost:5432/cs313db";
 	}
-	
-	$dbopts = parse_url($dbUrl);
-	$dbHost = $dbopts["host"];
-	$dbPort = $dbopts["port"];
-	$dbUser = $dbopts["user"];
-	$dbPassword = $dbopts["pass"];
-	$dbName = ltrim($dbopts["path"],'/');
-	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);	
-	
 	try
 	{
 		$user = 'postgres';
 		$password = 'aurelius6908';
-		$db = new PDO('pgsql:host=127.0.0.1;dbname=projectDB', $user, $password);
+		//$db = new PDO('pgsql:host=127.0.0.1;dbname=projectDB', $user, $password);
+		$db = pg_connect("host=localhost dbname=postgres user=postgres password=$password");
 	}
 	catch (PDOException $ex)
 	{
