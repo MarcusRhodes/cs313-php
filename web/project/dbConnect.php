@@ -4,6 +4,7 @@ function get_db() {
 	try {
 		$dbUrl = getenv('DATABASE_URL');
 		if (!isset($dbUrl) || empty($dbUrl)) {
+			//$dbUrl = "postgres://postgres:aurelius6908@localhost:5432/projectDB";		
 			$dbUrl = "postgres://postgres:aurelius6908@localhost:5432/projectDB";
 		}
 		
