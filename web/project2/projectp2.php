@@ -33,7 +33,7 @@ session_start();
 		$_SESSION['ID'] = $ID;		
 		foreach ($db->query("SELECT * FROM image WHERE imageid = '$ID'") as $row)
 		{
-			echo '<h1>Image ' . $row['imageid'] . '</h1>';
+			echo '<h2>Image ' . $row['imageid'] . '</h2>';
 			echo '<h3>' . $row['title'] . '</h3>';
 			echo 'Date: ' . $row['date'] . '  User: ' . $row['username'] . '<br>';
 			echo '<img src="' . $row['image'] . '" style="height="40%" width="40%"">';
