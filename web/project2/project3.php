@@ -15,9 +15,9 @@ session_start();
 		<h1>Meme Gallery</h1>
 	</div>
 	<?php
-		require "dbConnect.php";
-		$db = get_db();
-		/*
+		//require "dbConnect.php";
+		//$db = get_db();
+		
 		try
 		{
 			$user = 'postgres';
@@ -29,7 +29,7 @@ session_start();
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
-		*/
+		
 	?>
 	<p>Please enter all the following information. <br>
 	<b>We can't store images on a postgres database, but we can store image links!</b>

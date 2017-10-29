@@ -2,9 +2,9 @@
 session_start();
 $newDate = $_POST['date'];
 $ID = $_SESSION['ID'];
-require("dbConnect.php");
-$db = get_db();
-/*
+//require("dbConnect.php");
+//$db = get_db();
+
 try
 {
   $user = 'postgres';
@@ -16,7 +16,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-*/
+
 try
 {
 	$query0 = 'INSERT INTO imageDate(date) VALUES(:newDate)';

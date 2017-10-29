@@ -17,9 +17,9 @@ session_start();
 	<br>(Or at least a little amusing.)</p>
 	<br>
 	<?php
-		require "dbConnect.php";
-		$db = get_db();
-		/*
+		//require "dbConnect.php";
+		//$db = get_db();
+		
 		try
 		{
 			$user = 'postgres';
@@ -31,14 +31,14 @@ session_start();
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
-		*/
+		
 	?>
 	<form action="projectp2.php" method="post">
 		<table style="width:100%">
 			<tr>
 			<?php
 				$num = 0;
-				foreach ($db->query('SELECT title, imageid, image FROM image') as $row)
+				foreach ($db->query('SELECT * FROM image ORDER BY date') as $row)
 				{
 					echo '<td>';
    				echo '<button type="submit" name="imageid" value="' . $row['imageid'] 

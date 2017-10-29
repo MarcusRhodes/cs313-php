@@ -3,9 +3,9 @@ $username = $_POST['username'];
 $imageTitle = $_POST['image'];
 $imageDate = $_POST['date'];
 $imageData = $_POST['imageURL'];
-require("dbConnect.php");
-$db = get_db();
-/*
+//require("dbConnect.php");
+//$db = get_db();
+
 try
 {
   $user = 'postgres';
@@ -17,7 +17,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-*/
+
 try
 {
 	$query1 = 'INSERT INTO users(name) VALUES(:username)';
