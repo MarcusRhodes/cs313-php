@@ -12,9 +12,9 @@ session_start();
 		<h1>Meme Gallery</h1>
 	</div>
 	<?php
-		require "dbConnect.php";
-		$db = get_db();
-		/*
+		//require "dbConnect.php";
+		//$db = get_db();
+		
 		try
 		{
   			$user = 'postgres';
@@ -26,7 +26,7 @@ session_start();
   			echo 'Error!: ' . $ex->getMessage();
   			die();
 		}
-		*/
+		
 	?>
 	<?php
 		$ID = $_POST['imageid'];
