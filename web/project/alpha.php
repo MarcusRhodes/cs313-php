@@ -32,8 +32,8 @@ session_start();
 	<table style="width:100%">
 		<tr>
 		<?php
-			$num = 0;
-			foreach ($db->query('select * from image, imageDate where image.date = imageDate.date;') as $row)
+			$num = 0;//select title, imagedate, username, imageid from image, imageDate where image.date = imageDate.date;		
+			foreach ($db->query('select title, imageid, image from image left outer join imageDate on (imageDate.date = image.date);') as $row)
 			{
 				echo '<td>';
   				echo '<button type="submit" name="imageid" value="' . $row['imageid'] 

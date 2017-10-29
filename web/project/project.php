@@ -38,7 +38,7 @@ session_start();
 			<tr>
 			<?php
 				$num = 0;
-				foreach ($db->query('SELECT title, imageid, image FROM image') as $row)
+				foreach ($db->query('SELECT * FROM image ORDER BY date') as $row)
 				{
 					echo '<td>';
    				echo '<button type="submit" name="imageid" value="' . $row['imageid'] 
